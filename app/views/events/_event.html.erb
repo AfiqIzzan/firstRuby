@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @event.name %>
+  </h1>
+  <p class="lead">
+    <%= @event.no_of_participant %>  | 
+    <%= @event.date %>  |  
+    <%= @event.time.strftime('%H:%M:%S') %>
+
+  </p>
+  <br/>
+
+  <%= link_to 'Edit', edit_event_path(@event), class:"btn btn-secondary" %>
+  <%= link_to 'Delete', @event, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+   
+</div>
